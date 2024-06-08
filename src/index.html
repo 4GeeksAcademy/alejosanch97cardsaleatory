@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Cards</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -11,19 +11,82 @@
       crossorigin="anonymous"
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
+    <link src="app.js" />
   </head>
-  <body>
+
+  <body class="bg-success">
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+      <div
+        id="row"
+        class="row mt-5 mb-3 d-flex justify-content-center align-items-center"
+      >
+        <div
+          id="card"
+          class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-4 mx-auto  bg-light rounded"
+        >
+          <div class="d-flex justify-content-start display-3">
+            <span id="up"></span>
+          </div>
+          <div
+            class="d-flex justify-content-center align-items-center my-5 display-1 "
+          >
+            <p id="number" class="text-monospace"></p>
+          </div>
+          <div class="d-flex justify-content-end display-3">
+            <span id="bottom" style="transform: rotate(180deg)"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-lg-3 col-md-4 col-sm-5 col-8">
+          <div class="d-flex justify-content-center align-items-center"></div>
+          <button id="button" class="btn btn-primary">
+            Crea una nueva Card
+          </button>
+          <div class="d-flex justify-content-center align-items-center mt-2">
+            <div id="time" class="btn btn-primary"></div>
+          </div>
+          <div class="d-flex justify-content-start align-items-center bg-white mt-2>
+            <span id="currentTime"></span>
+          </div>
+          <div class="input-group mt-3">
+            <span class="input-group-text" for="widthInput">Width</span>
+            <input
+              type="number"
+              class="form-control"
+              id="widthInput"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
+          <div class="input-group mt-3">
+            <span class="input-group-text" for="heightInput">Height</span>
+            <input
+              type="number"
+              class="form-control"
+              id="heightInput"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
+        </div>
       </div>
     </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
