@@ -65,12 +65,29 @@ const button = document.querySelector("#button");
 button.addEventListener("click", () => createCard());
 
 const heightInput = document.getElementById("heightInput");
+const bottom = document.getElementById("bottom");
+const heightnumber = document.getElementById("number");
+
+function validateInput(inputElement, minValue, message) {
+  const value = parseInt(inputElement.value);
+  if (value && value < minValue) {
+    inputElement.value = minValue; // Set minimum value if below threshold
+    alert(message); // Display error message
+  }
+}
+
 heightInput.addEventListener("input", function() {
   const heightValue = heightInput.value;
+  validateInput(heightInput, 349, "La altura minima de la carta es de 350");
   card.style.height = heightValue ? heightValue + "px" : "";
+  number.style.marginTop =
+    heightValue * 0.55 - 200 ? heightValue * 0.55 - 200 + "px" : "";
+  bottom.style.marginTop =
+    heightValue * 0.45 - 160 ? heightValue * 0.45 - 160 + "px" : "";
   heightInput.addEventListener("blur", function() {
     if (!heightInput.value) {
       card.style.height = "";
+      bottom.style.marginTop = "";
     }
   });
 });
@@ -78,6 +95,7 @@ heightInput.addEventListener("input", function() {
 const widthInput = document.getElementById("widthInput");
 widthInput.addEventListener("input", function() {
   const widthValue = widthInput.value;
+  validateInput(widthInput, 319, "El ancho minimo de la carta es de 320");
   card.style.width = widthValue ? widthValue + "px" : "";
   widthInput.addEventListener("blur", function() {
     if (!widthInput.value) {
